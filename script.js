@@ -30,9 +30,11 @@ function operate(operator, num1 ,num2) {
 
 function populateDisplay() {
     let display = document.querySelector('.display')
-    let btn = document.querySelectorAll('.btn')
-    btn.addEventListener('click', () => {
-        display.textContent = btn.textContent
+    let buttons = document.querySelectorAll('.btn')
+    buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+            display.textContent = button.textContent
+        })
     })
 }
 populateDisplay()
