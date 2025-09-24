@@ -19,6 +19,10 @@
 .display {
     border: 1px solid #333;
     flex:1 ;
+    /* populate display text centering */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .body {
     /* border: 1px solid #333; */
