@@ -28,13 +28,68 @@ function operate(operator, num1 ,num2) {
     }
 }
 
+let displayTextContainer = ''
+let justEvaluated = false
+let isOperatorClicked = false
+
 function populateDisplay() {
     let display = document.querySelector('.display')
-    let buttons = document.querySelectorAll('.btn')
-    buttons.forEach((button) => {
+    let buttonsNum = document.querySelectorAll('.btn.num')
+        
+    buttonsNum.forEach((button) => {
         button.addEventListener('click', () => {
-            display.textContent = button.textContent
+            if (isOperatorClicked === true) {
+                display.textContent = ''
+                isOperatorClicked = false
+            }
+
+            if (justEvaluated === false) {
+                display.textContent += button.textContent
+                displayTextContainer = display.textContent
+            }
+            else if (justEvaluated == true) {
+                display.textContent = button.textContent
+                displayTextContainer = display.textContent
+                justEvaluated = false
+            }
+
+            if(operator !== undefined){
+                num2 = +displayTextContainer
+                console.log(`num2 = ${num2}`)
+            }
+            else{
+                num1 = +displayTextContainer
+                console.log(`num1 = ${num1}`)
+            }
         })
+    })
+
+    let buttonsOp = document.querySelectorAll('.btn.op')
+    buttonsOp.forEach((buttonOp) => {
+        buttonOp.addEventListener('click', () => {
+            isOperatorClicked = true
+            // calculate directly if num1 and num2 are present
+            if (num2 !== undefined) {
+                let result = operate(operator, num1, num2)
+                display.textContent = result
+                num1 = result
+                num2 = undefined
+                justEvaluated = true
+            }
+            operator = buttonOp.textContent
+            console.log(`operator = ${operator}`)
+        })
+    })
+
+    let buttonEqualsTo = document.querySelector('.btn.equal')
+    buttonEqualsTo.addEventListener('click', () => {
+        isOperatorClicked = false
+        justEvaluated = true 
+        display.textContent = ''
+        let result = operate(operator,num1,num2)
+        display.textContent = result
+        num1 = result
+        num2 = undefined
     })
 }
 populateDisplay()
