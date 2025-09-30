@@ -54,8 +54,16 @@ function populateDisplay() {
             }
 
             if(operator !== undefined){
-                num2 = +displayTextContainer
-                console.log(`num2 = ${num2}`)
+                // divide by 0
+                if (operator === '/' && +displayTextContainer === 0) {
+                    display.textContent = 'error: divide by 0'
+                    num2 = undefined
+                    return
+                }
+                else {
+                    num2 = +displayTextContainer
+                    console.log(`num2 = ${num2}`)
+                }
             }
             else{
                 num1 = +displayTextContainer
@@ -85,6 +93,14 @@ function populateDisplay() {
     buttonEqualsTo.addEventListener('click', () => {
         isOperatorClicked = false
         justEvaluated = true 
+
+        // prevents calculator from dividing by zero
+        if (operator === '/' && num2 === 0) {
+            display.textContent = 'error: divide by 0'
+            num2 = undefined
+            return
+        }
+
         display.textContent = ''
         let result = operate(operator,num1,num2)
         display.textContent = result
