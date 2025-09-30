@@ -91,5 +91,16 @@ function populateDisplay() {
         num1 = result
         num2 = undefined
     })
+
+    let allClear = document.querySelector('.btn.allClear')
+    allClear.addEventListener('click', () => {
+        display.textContent = ''
+        num1 = undefined
+        num2 = undefined
+        operator = undefined
+        displayTextContainer = ''
+        justEvaluated = false
+        isOperatorClicked = false
+    })
 }
 populateDisplay()
