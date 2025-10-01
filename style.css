@@ -53,6 +53,27 @@
     justify-content: center;
     align-items: center;
     font-size: 25px;
+    cursor: pointer;
+    transition: transform 0.1s ease, background-color 0.1s ease;
+    user-select: none; /* prevent text selection */
+}
+
+.btn:active {
+    transform: scale(0.95); /* slight shrink on click */
+    background-color: #808080; /* slightly darker while pressed */
+}
+
+.btn.num:hover {
+    border: 3px solid greenyellow;
+}
+.btn.op:hover{
+    border: 3px solid greenyellow   ;
+}
+.btn.equal:hover {
+    border: 3px solid greenyellow;
+}
+.btn.allClear:hover {
+    border: 3px solid rgb(217, 41, 41);
 }
 
 h1 {
