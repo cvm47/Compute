@@ -57,7 +57,9 @@ function populateDisplay() {
                 // divide by 0
                 if (operator === '/' && +displayTextContainer === 0) {
                     display.textContent = 'error: divide by 0'
-                    num2 = undefined
+                    num1 = num2 = operator = undefined
+                    displayTextContainer = ''
+                    justEvaluated = true
                     return
                 }
                 else {
@@ -97,7 +99,9 @@ function populateDisplay() {
         // prevents calculator from dividing by zero
         if (operator === '/' && num2 === 0) {
             display.textContent = 'error: divide by 0'
-            num2 = undefined
+            num1 = num2 = operator = undefined
+            displayTextContainer = ''
+            justEvaluated = true
             return
         }
 
