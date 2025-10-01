@@ -18,7 +18,7 @@
 }
 
 .display {
-    border: 1px solid rgb(179, 231, 101);
+    border: 2px solid rgb(179, 231, 101);
     background-color: #1d1d1d;
     color: rgb(171, 255, 44);
     font-size: 30px;
@@ -64,16 +64,16 @@
 }
 
 .btn.num:hover {
-    border: 3px solid greenyellow;
+    border: 2px solid greenyellow;
 }
 .btn.op:hover{
-    border: 3px solid greenyellow   ;
+    border: 2px solid greenyellow   ;
 }
 .btn.equal:hover {
-    border: 3px solid greenyellow;
+    border: 2px solid greenyellow;
 }
 .btn.allClear:hover {
-    border: 3px solid rgb(217, 41, 41);
+    border: 2px solid rgb(217, 41, 41);
 }
 
 h1 {
