@@ -2,11 +2,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border-radius: 2px;
+    border-radius: 5px;
     font-family: 'Orbitron';
 }
 .container {
     border: 1px solid #333;
+    background-color: #333;
     height: 550px;
     max-width: 350px;
     margin: 0 auto;
@@ -17,7 +18,10 @@
 }
 
 .display {
-    border: 1px solid #333;
+    border: 1px solid rgb(179, 231, 101);
+    background-color: #1d1d1d;
+    color: rgb(171, 255, 44);
+    font-size: 30px;
     flex:1 ;
     /* populate display text centering */
     display: flex;
@@ -42,6 +46,7 @@
 }
 .btn {
     border: 1px solid #333;
+    background-color: #929292;
     flex:1;
     /* center text */
     display: flex;
